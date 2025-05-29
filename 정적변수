@@ -1,0 +1,22 @@
+//sclass3.c 정적변수와 동적변수//동적변수, 자동변수는 우리가 이때까지 사용하던 변수
+//정적변수도 전역변수와 같이 초기값0, 수명=프로그램. 단 한번만 초기화.
+
+#include<stdio.h>
+
+void stdy(void);
+
+int main(void) {
+	for (int i = 1; i <= 10; i++) {
+		stdy();
+	}
+	return 0;
+}
+
+void stdy(void) {
+	int dVar = 0;
+	static int sVar = 0;//초기화
+	dVar++; sVar++;
+	printf("동적변수 %d. 정적변수 %d\n", dVar, sVar);
+	if (sVar == 5)sVar = 100; //할당연산
+	return;
+}
