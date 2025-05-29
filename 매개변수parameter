@@ -3,7 +3,7 @@
 
 #include<stdio.h>
 
-void swap(int, int);
+void swap(int*, int*);
 
 int main(void) {
 	int a = 10, b = 100;
@@ -15,11 +15,11 @@ int main(void) {
 	return 0;
 }
 
-void swap(int x, int y) {
+void swap(int *a, int *b) {
 	int tmp;
-	tmp = x;
-	x = y;
-	y = tmp;
-	printf("swapping a(x)=%d, b(y)=%d\n", x, y);
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+	printf("swapping a(x)=%d, b(y)=%d\n", *a, *b);
 	return;
 }
