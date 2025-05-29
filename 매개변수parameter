@@ -1,0 +1,25 @@
+//parameter.c 매개변수 전달 방법. 함수
+//call by value:값만 전달하기 때문에 함수사이의 영향x, call by reference:다른 함수 영향o
+
+#include<stdio.h>
+
+void swap(int, int);
+
+int main(void) {
+	int a = 10, b = 100;
+	printf("a=%d, b=%d\n", a, b);
+	swap(a, b);
+	printf("after a=%d, b=%d\n", a, b);
+
+
+	return 0;
+}
+
+void swap(int x, int y) {
+	int tmp;
+	tmp = x;
+	x = y;
+	y = tmp;
+	printf("swapping a(x)=%d, b(y)=%d\n", x, y);
+	return;
+}
