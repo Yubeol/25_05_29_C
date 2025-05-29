@@ -1,0 +1,24 @@
+//sclass1.c 지역변수
+#include <stdio.h>
+
+int main(void) {
+    int a = 1, b = 2, c = 3;
+
+    printf("a=%d, b=%d, c=%d\n", a, b, c); // 1 2 3
+    {
+        int b = 10, c = 30;
+        a = c - b;
+        printf("a=%d, b=%d, c=%d\n", a, b, c); // 20 10 30
+        {
+            int c = 100;
+            b = c;
+            printf("a=%d, b=%d, c=%d\n", a, b, c); // 20 100 100
+        }
+        c += 100;
+        printf("a=%d, b=%d, c=%d\n", a, b, c); // 20 100 130
+    }
+    b = a + b;
+    printf("a=%d, b=%d, c=%d\n", a, b, c); // 20 22 3
+
+    return 0;
+}
