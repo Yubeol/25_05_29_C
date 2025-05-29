@@ -1,0 +1,13 @@
+//포인터는 주소를 의미한다.
+
+#include<stdio.h>
+
+int main(void) {
+	int a=100, * ap;
+	ap = &a;
+
+	printf("  a=%d[%#X]\n", a, &a);//&붙으면 주소 아니면 값
+	printf("*ap=%d[%#X][포인터변수의 주소 %#X]\n", *ap, ap, &ap); //*이 붙은으면 자기주소가 아닌 그 주소를 가르키는 주소이다.
+
+	return 0;
+}
