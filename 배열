@@ -1,15 +1,18 @@
 //배열 array1.c
 #include<stdio.h>
+#define N 5
 
 int main(void) {
-	int data[10];
+	int data[N];//배열명:배열의 시작 주소(포인터) data는 배열의 시작주소, 배열의 첫 데이터의 주소
+	//배열쵸기식 data[개수]=>*(data+개수)
+	//ex:값을 지칭. data[4]=*(data+4) 주소지칭: &data[4]=&*(data+4)=data+4
 
-	printf("정수 10개 써\n");
-	for (int i = 0; i < sizeof(data)/sizeof(int); i++){
+	printf("정수 10개 써\n", N);
+	for (int i = 0; i < N; i++){
 	scanf_s("%d", & data[i]);
 }
-	printf("입력힌 데이터 10개 각자에 +100한 결과\n");
-	for (int i = 0; i < sizeof(data)/4; i++){
+	printf("입력힌 데이터 10개 각자에 +100한 결과\n", N);
+	for (int i = 0; i < N; i++){
 	printf("data[%d]: %d\n",i ,data[i]+=100);
 	}
 	return 0;
