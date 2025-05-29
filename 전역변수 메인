@@ -1,0 +1,37 @@
+//sclass2.c 전역변수: 모든 영역에 영향, ㅠㅡ로그램이 복잡해지면 어디서 수정되는지 혼란.
+//초기값 0, 수명=프로그램, 남발 금지, 상태와 같이 모든 곳에서 같이 알아야 하는 변수만 사용.
+//사용 위치는 전퍼리기와 함수 선언 사이에서 사용전에 반드시 선언되어야 한다.
+
+#include<stdio.h>
+
+int power;//전역
+void powerOn(void);
+void powerOff(void);
+
+
+int main(void) {
+	int in, roomPower = 0;
+	printf("집 전원?[0:꺼, 1:켜]=>");
+	scanf_s("%d", &in);
+	if (in == 1)
+		powerOn();
+	else
+		powerOff();
+
+	printf("방 전원?[0:꺼, 1:켜]=>");
+	scanf_s("%d", &in);
+	if (in == 1 && power == 1)
+		roomPower = 1;
+	else if (in == 1 && power == 0) {
+		powerOn();
+		roomPower = 1;
+	}
+	else if (in == 0 && power == 1) 
+		roomPower = 0;
+	else{
+		powerOff();
+	roomPower = 0;
+	}
+	printf("집 %d, 방 %d\n",power, roomPower);
+	return 0;
+}
