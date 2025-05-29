@@ -1,0 +1,14 @@
+//sclass2sub.c
+#include<stdio.h>
+extern int power;//외부변수, 다른 파일의 전역변수를 가져와서 전역변수로 이용.
+void powerOn(void) {
+	power = 1;
+	printf("전원 켰다.!\n");
+	return;
+}
+
+void powerOff(void) {
+	power = 0;
+	printf("전원 껐다.!\n");
+	return;
+}
