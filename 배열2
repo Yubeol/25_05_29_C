@@ -1,0 +1,22 @@
+//10개의 숫자를 입력받아서 역으로 출력하기
+
+#include<stdlib.h>
+#include<time.h>
+#include<stdio.h>
+#define N 10
+
+int main(void) {
+	int data[N];
+	srand((unsigned)time(NULL));
+
+	//printf("정수 10개 써\n", N);
+	for (int i = 0; i < N; i++) {
+		data[i] = (rand()%48+1);
+	}
+	printf("선택된 데이터 %개\n", N);
+	for (int i = N-1; i >=0; i--) {
+		printf("data[%d]: %d\n", i, data[i]);
+	}
+	return 0;
+}
+
